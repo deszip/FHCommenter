@@ -25,6 +25,12 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2012 FHOF. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
-	<string></string>
+	<string>FHCommenter</string>
+	<key>XC4Compatible</key>
+	<true/>
+	<key>XCGCReady</key>
+	<true/>
+	<key>XCPluginHasUI</key>
+	<false/>
 </dict>
 </plist>

@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		0E7B367D167BB14E00ADF50F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7B367C167BB14E00ADF50F /* Cocoa.framework */; };
 		0E7B3687167BB14E00ADF50F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E7B3685167BB14E00ADF50F /* InfoPlist.strings */; };
+		0E7B3690167BB4A200ADF50F /* FHCommenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7B368F167BB4A200ADF50F /* FHCommenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E7B3679167BB14E00ADF50F /* FHCommenterPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FHCommenterPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E7B3679167BB14E00ADF50F /* FHCommenterPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FHCommenterPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E7B367C167BB14E00ADF50F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0E7B367F167BB14E00ADF50F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		0E7B3680167BB14E00ADF50F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -20,6 +21,8 @@
 		0E7B3684167BB14E00ADF50F /* FHCommenterPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FHCommenterPlugin-Info.plist"; sourceTree = "<group>"; };
 		0E7B3686167BB14E00ADF50F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0E7B3688167BB14E00ADF50F /* FHCommenterPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FHCommenterPlugin-Prefix.pch"; sourceTree = "<group>"; };
+		0E7B368E167BB4A200ADF50F /* FHCommenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHCommenter.h; sourceTree = "<group>"; };
+		0E7B368F167BB4A200ADF50F /* FHCommenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHCommenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +49,7 @@
 		0E7B367A167BB14E00ADF50F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0E7B3679167BB14E00ADF50F /* FHCommenterPlugin.bundle */,
+				0E7B3679167BB14E00ADF50F /* FHCommenterPlugin.xcplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +76,8 @@
 		0E7B3682167BB14E00ADF50F /* FHCommenterPlugin */ = {
 			isa = PBXGroup;
 			children = (
+				0E7B368E167BB4A200ADF50F /* FHCommenter.h */,
+				0E7B368F167BB4A200ADF50F /* FHCommenter.m */,
 				0E7B3683167BB14E00ADF50F /* Supporting Files */,
 			);
 			path = FHCommenterPlugin;
@@ -105,7 +110,7 @@
 			);
 			name = FHCommenterPlugin;
 			productName = FHCommenterPlugin;
-			productReference = 0E7B3679167BB14E00ADF50F /* FHCommenterPlugin.bundle */;
+			productReference = 0E7B3679167BB14E00ADF50F /* FHCommenterPlugin.xcplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -150,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E7B3690167BB4A200ADF50F /* FHCommenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,12 +228,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DSTROOT = "${HOME}";
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FHCommenterPlugin/FHCommenterPlugin-Prefix.pch";
 				INFOPLIST_FILE = "FHCommenterPlugin/FHCommenterPlugin-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "/LIbrary/Application Support/Developer/Shared/Xcode/Plug-ins";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Debug;
 		};
@@ -235,12 +244,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DSTROOT = "${HOME}";
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FHCommenterPlugin/FHCommenterPlugin-Prefix.pch";
 				INFOPLIST_FILE = "FHCommenterPlugin/FHCommenterPlugin-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "/LIbrary/Application Support/Developer/Shared/Xcode/Plug-ins";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Release;
 		};
@@ -263,6 +275,7 @@
 				0E7B368D167BB14E00ADF50F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
